@@ -57,10 +57,10 @@ python test.py
 
 <br />
 
-## Running the dockerized application
+## Running the Dockerized application
 
-Alternatively, run the API as a dockerized application. 
-Build the docker container.
+Alternatively, run the API as a Dockerized application. 
+Build the Docker container.
 
 ```bash
 docker build -t todo_flask:latest .
