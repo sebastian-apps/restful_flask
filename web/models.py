@@ -1,6 +1,4 @@
 from flask_sqlalchemy import SQLAlchemy
-from flask_restful import Api, Resource, reqparse, abort, fields, marshal_with
-from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import DateTime, inspect
 import datetime 
 
