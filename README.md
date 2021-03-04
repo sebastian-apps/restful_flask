@@ -49,7 +49,7 @@ Run the Flask app.
 flask run
 ```
 
-In another terminal, run test.py as the client for the API.
+In another terminal, run restful_flask/web/test.py as the client for the API.
 
 ```bash
 python test.py
@@ -80,7 +80,7 @@ docker ps -a
 ```
 
 
-In another terminal, run test.py as the client for the API.
+In another terminal, run restful_flask/web/test.py as the client for the API.
 
 ```bash
 python test.py
