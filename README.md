@@ -1,6 +1,6 @@
 # RESTful Flask
 
-To Do List RESTful API in Flask for tracking tasks and the steps for involved in completing tasks.
+To Do List RESTful API in Flask for tracking tasks and tracking the steps involved in completing tasks.
 
 
 <br />
