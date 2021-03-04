@@ -64,6 +64,14 @@ Run the container.
 docker run -d -p 5000:5000 todo_flask
 ```
 
+Check the process status of the application.<br>
+todo_flask should be up and running.
+
+```bash
+docker ps -a
+```
+
+
 In another terminal, run test.py as the client for the API.
 
 ```bash
