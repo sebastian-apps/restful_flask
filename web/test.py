@@ -54,7 +54,7 @@ def main():
     # Get all data, including steps
     response = requests.get(BASE + "task")
 
-    # Try to delete task 0
+    # Try to delete task 0, but it should not since it still has steps.
     response = requests.delete(BASE + "task/0")
 
     # Delete first two steps
