@@ -1,19 +1,23 @@
+"""
+
+This API allows for CRUD operations on a list of tasks, which are primarily comprised of a title and description. Every task can 
+be a parent to a list of steps. Steps can be added and deleted at will. Tasks, however, can only be deleted (or "completed") when
+all of its steps have been deleted.
+
+"""
+
+
 from flask import Flask, render_template
 from flask_restful import Api, Resource, reqparse, abort, fields, marshal_with
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import DateTime, inspect
 import datetime 
-
 from models import db, TaskModel, StepModel
 
 
 app = Flask(__name__)
-
 api = Api(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-
-
-
 #db = SQLAlchemy(app)
 db.init_app(app)
 
@@ -25,7 +29,7 @@ def index():
 
 
 
-
+# Argument Parser
 task_put_args = reqparse.RequestParser()
 task_put_args.add_argument("title", type=str, help="Title of Task", required=True)
 task_put_args.add_argument("desc", type=str, help="Description of Task", required=True)
@@ -47,14 +51,13 @@ step_update_args.add_argument("task_id", type=int, help="Task ID")
 
 
 
+# Payload fields
 step_fields = {
     "id": fields.Integer,
     "step_num": fields.Integer,
     "date_created": fields.DateTime,
     "desc": fields.String,
 }
-
-
 
 task_fields = {
     "id": fields.Integer,
@@ -66,7 +69,7 @@ task_fields = {
 
 
 
-
+# Drop and recreate the database
 with app.app_context():
     db.drop_all()
     db.create_all()
@@ -74,6 +77,7 @@ with app.app_context():
 
 
 
+""" RESOURCES """
 
 class Task(Resource):
     # GET 
@@ -131,7 +135,7 @@ class Task(Resource):
 
 
 
-""" Return All Tasks """
+# Return All Tasks
 class Tasks(Resource):
     @marshal_with(task_fields)
     def get(self):
@@ -200,7 +204,7 @@ class Step(Resource):
 
 
 
-""" Return All Steps """
+# Return All Steps 
 class Steps(Resource):
     @marshal_with(step_fields)
     def get(self):
@@ -218,12 +222,5 @@ api.add_resource(Step, "/step/<int:step_id>")
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
-
-
-
-
-# def object_as_dict(obj):
-#     return {c.key: getattr(obj, c.key)
-#             for c in inspect(obj).mapper.column_attrs}
+    app.run(debug=False, host='0.0.0.0')
 
