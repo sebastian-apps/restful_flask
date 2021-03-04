@@ -79,8 +79,7 @@ todo_flask should be up and running.
 docker ps -a
 ```
 
-
-In another terminal, run restful_flask/web/test.py as the client for the API.
+Run restful_flask/web/test.py as the client for the API.
 
 ```bash
 python test.py
