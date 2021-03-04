@@ -17,6 +17,7 @@ class TaskModel(db.Model):
     date_created = db.Column(DateTime, default=datetime.datetime.utcnow)
     steps = db.relationship("StepModel", back_populates="task")
 
+    # return number of steps related to the task
     def steps_count(self):
         return len(self.steps)
 
