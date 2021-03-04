@@ -59,7 +59,7 @@ python test.py
 
 ## Running the Dockerized application
 
-Alternatively, run the API as a Dockerized application. 
+Alternatively, run the API as a Dockerized application. Install [Docker](http://www.docker.com).
 Build the Docker container.
 
 ```bash
