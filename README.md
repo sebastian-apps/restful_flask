@@ -39,7 +39,7 @@ Install dependencies. The installation works best with Python 3.7.7.
 pip install -r requirements.txt
 ```
 
-Run the Flask app
+Run the Flask app.
 
 ```bash
 flask run
@@ -52,7 +52,7 @@ python test.py
 ```
 
 Alternatively, run the API as a dockerized application. 
-Build the docker container:
+Build the docker container.
 
 ```bash
 docker build -t todo_flask:latest .
