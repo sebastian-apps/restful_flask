@@ -41,7 +41,7 @@ pip install -r requirements.txt
 
 ## Running the application
 
-<p>
+<br />
 
 Run the Flask app.
 
@@ -56,6 +56,8 @@ python test.py
 ```
 
 ## Running the dockerized application
+
+<br />
 
 Alternatively, run the API as a dockerized application. 
 Build the docker container.
