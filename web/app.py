@@ -192,7 +192,7 @@ class Step(Resource):
     def delete(self, step_id):
         result = StepModel.query.filter_by(id=step_id).first()
         if not result:
-            abort(404, message="Could not find task with that id")
+            abort(404, message="Could not find step with that id")
         StepModel.query.filter_by(id=step_id).delete()
         db.session.commit()
         return '', 204 
