@@ -94,7 +94,6 @@ class Task(Resource):
     def post(self, task_id):
         args = task_put_args.parse_args()
         result = TaskModel.query.filter_by(id=task_id).first()
-        #id_exists = db.session.query(exists().where(TaskModel.id==task_id)).scalar()
         if result:
             abort(409, message="Task id taken")
 
