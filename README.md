@@ -85,3 +85,9 @@ Run restful_flask/web/test.py as the client for the API.
 python test.py
 ```
 
+To stop running the container...
+
+```bash
+docker stop <your containter ID>
+```
+
