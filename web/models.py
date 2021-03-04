@@ -1,6 +1,4 @@
-
 from flask_sqlalchemy import SQLAlchemy
-
 from flask_restful import Api, Resource, reqparse, abort, fields, marshal_with
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import DateTime, inspect
@@ -10,6 +8,7 @@ import datetime
 db = SQLAlchemy()
 
 
+""" Task is a parent of Step """
 class TaskModel(db.Model):
     __tablename__ = 'task'
     id = db.Column(db.Integer, primary_key=True)
@@ -23,7 +22,7 @@ class TaskModel(db.Model):
 
 
 
-
+""" Step is a child of Task """
 class StepModel(db.Model):
     __tablename__ = 'step'
     id = db.Column(db.Integer, primary_key=True)
@@ -32,4 +31,6 @@ class StepModel(db.Model):
     date_created = db.Column(DateTime, default=datetime.datetime.utcnow)
     task_id = db.Column(db.Integer, db.ForeignKey("task.id"))
     task = db.relationship("TaskModel", back_populates = 'steps')
+
+
 
