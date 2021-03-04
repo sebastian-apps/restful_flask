@@ -45,7 +45,7 @@ Run the Flask app.
 flask run
 ```
 
-Run test.py as the client for the API.
+In another terminal, run test.py as the client for the API.
 
 ```bash
 python test.py
@@ -64,10 +64,9 @@ Run the container.
 docker run -d -p 5000:5000 todo_flask
 ```
 
-Run test.py as the client for the API.
+In another terminal, run test.py as the client for the API.
 
 ```bash
 python test.py
 ```
-
 
