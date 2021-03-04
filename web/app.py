@@ -150,14 +150,10 @@ class Step(Resource):
     # GET 
     @marshal_with(step_fields)
     def get(self, step_id):
-        if not step_id:
-            result = StepModel.query.all().order_by(StepModel.id)
-            return result
-        else:
-            result = StepModel.query.filter_by(id=step_id).first()
-            if not result:
-                abort(404, message="Could not find step with that id")
-            return result
+        result = StepModel.query.filter_by(id=step_id).first()
+        if not result:
+            abort(404, message="Could not find step with that id")
+        return result
 
 
     # POST 
