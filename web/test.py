@@ -82,7 +82,6 @@ def main():
 
     # Get all steps
     response = requests.get(BASE + "step/")
-    pprint(response)
     assert response.json()[1].get("desc")=="Install winter tires", "Should be 'Install winter tires'"
 
     # Update a step to that task  
