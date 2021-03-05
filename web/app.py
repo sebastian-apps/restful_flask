@@ -30,9 +30,9 @@ def index():
 
 
 # Argument Parser
-task_put_args = reqparse.RequestParser()
-task_put_args.add_argument("title", type=str, help="Title of Task", required=True)
-task_put_args.add_argument("desc", type=str, help="Description of Task", required=True)
+task_post_args = reqparse.RequestParser()
+task_post_args.add_argument("title", type=str, help="Title of Task", required=True)
+task_post_args.add_argument("desc", type=str, help="Description of Task", required=True)
 
 task_update_args = reqparse.RequestParser()
 task_update_args.add_argument("title", type=str, help="Title of Task")
@@ -92,7 +92,7 @@ class Task(Resource):
     # POST 
     @marshal_with(task_fields)
     def post(self, task_id):
-        args = task_put_args.parse_args()
+        args = task_post_args.parse_args()
         result = TaskModel.query.filter_by(id=task_id).first()
         if result:
             abort(409, message="Task id taken")
