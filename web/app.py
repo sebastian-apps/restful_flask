@@ -32,7 +32,7 @@ def index():
 # Argument Parser
 task_post_args = reqparse.RequestParser()
 task_post_args.add_argument("title", type=str, help="Title of Task", required=True)
-task_post_args.add_argument("desc", type=str, help="Description of Task", required=True)
+task_post_args.add_argument("desc", type=str, help="Description of Task")
 
 task_update_args = reqparse.RequestParser()
 task_update_args.add_argument("title", type=str, help="Title of Task")
