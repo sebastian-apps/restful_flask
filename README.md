@@ -88,6 +88,6 @@ python test.py
 To stop running the container...
 
 ```bash
-docker stop <your containter ID>
+docker stop <your container ID>
 ```
 
