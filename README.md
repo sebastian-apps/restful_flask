@@ -17,7 +17,11 @@ Create the virtual environment.
 
 ```
 cd restful_flask
+```
+```
 cd web
+```
+```
 python -m venv env
 ```
 
