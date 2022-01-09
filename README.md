@@ -53,7 +53,7 @@ Run the Flask app.
 flask run
 ```
 
-In another terminal, run restful_flask/web/test.py as the client for the API.
+In another terminal, run /restful_flask/web/test.py as the client for the API.
 
 ```bash
 python test.py
@@ -83,7 +83,7 @@ todo_flask should be up and running.
 docker ps -a
 ```
 
-Run restful_flask/web/test.py as the client for the API.
+Run /restful_flask/web/test.py as the client for the API.
 
 ```bash
 python test.py
