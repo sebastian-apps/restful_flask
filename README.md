@@ -25,7 +25,7 @@ cd web
 python -m venv env
 ```
 
-Activate the virtual environment <i>for OSX</i>.
+Activate the virtual environment <i>for Mac</i>.
 
 ```
 source env/bin/activate
